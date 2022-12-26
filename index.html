@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/styles.css">
+    <title>Multi step form</title>
+</head>
+<body>
+    <main class="main">
+        <div class="content ">
+            <div class="step rounded">
+                <h1 class="step__title">Personal info</h1>
+                <h2 class="step__subtitle subtitle">Please provide, email address and phone number</h2>
+                <form class="step__form" id="form1">
+                    <fildset class="step__form__container">
+                        <legend class="step__form__req label">Name</legend>
+                        <input type="text" class="step__form__input placeholder" placeholder="e.g.Stephen King" pattern="[a-zA-Z]+(( [a-zA-Z]+)+)?" required>
+                    </fildset>
+                    <fildset class="step__form__container">
+                        <legend class="step__form__req label">Email Adress</legend>
+                        <input type="text" class="step__form__input placeholder" placeholder="e.g.stephenking@lorem.com" pattern="[a-zA-Zñ\d\.]+@[a-zA-Z]+\.[a-z]+" required>
+                    </fildset>
+                    <fildset class="step__form__container">
+                        <legend class="step__form__req label">Phone Number</legend>
+                        <input type="text" class="step__form__input placeholder" placeholder="e.g.+1 234 567 890" pattern="\+\d+ (\d+ ?)+" required>
+                    </fildset>
+                </form>
+            </div>
+        </div>
+        <nav class="sidenav">
+            <div class="stepside">
+                <button class="stepside__num">1</button>
+                <p class="stepside__which">step 1</p>
+                <h3 class="stepside__name">your info</h3>
+            </div>
+            <div class="stepside">
+                <button class="stepside__num">2</button>
+                <p class="stepside__which">step 2</p>
+                <h3 class="stepside__name">select-plan</h3>
+            </div>
+            <div class="stepside">
+                <button class="stepside__num">3</button>
+                <p class="stepside__which">step 3</p>
+                <h3 class="stepside__name">add-ons</h3>
+            </div>
+            <div class="stepside">
+                <button class="stepside__num">4</button>
+                <p class="stepside__which">step 4</p>
+                <h3 class="stepside__name">summary</h3>
+            </div>
+        </nav>
+        <footer class="footer">
+            <button class="back button hidden">Go Back</button>
+            <button class="next button ">Next Step</button>
+        </footer>
+    </main>
+</body>
+</html>
