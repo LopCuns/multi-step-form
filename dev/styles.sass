@@ -55,12 +55,14 @@ input
     height:100vh
     z-index:0
 .content
-    @include mx.flex(column,wrap,start,start)
+    @include mx.flex()
     width: 90%
     margin-top: 6rem
 .step
-    background-color: map.get($neutral-colors,'white')
+
+    width:100%
     padding:1rem 2rem 2rem
+    background-color: map.get($neutral-colors,'white')
     &__form
         @include mx.flex(column,wrap,start,start)
         gap:1.5rem
