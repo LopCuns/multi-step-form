@@ -11,46 +11,42 @@
 </head>
 <body>
     <main class="main">
-        <div class="content ">
+        <form class="content" id="form">
             <div class="step rounded">
-                <h1 class="step__title">Personal info</h1>
-                <h2 class="step__subtitle subtitle">Please provide, email address and phone number</h2>
-                <form class="step__form" id="form1">
-                    <fildset class="step__form__container">
-                        <legend class="step__form__req label">Name</legend>
-                        <input type="text" class="step__form__input placeholder" placeholder="e.g.Stephen King" pattern="[a-zA-Z]+(( [a-zA-Z]+)+)?" required>
+                <h2 class="step__title">Personal info</h2>
+                <h3 class="step__subtitle subtitle">Please provide, email address and phone number</h3>
+                <div class="step__fields">
+                    <fildset class="step__fields__container">
+                        <legend class="step__fields__req label">Name</legend>
+                        <input type="text" class="step__fields__input placeholder" placeholder="e.g.Stephen King" pattern="[a-zA-Z]+(( [a-zA-Z]+)+)?" required autocomplete="off">
                     </fildset>
-                    <fildset class="step__form__container">
-                        <legend class="step__form__req label">Email Adress</legend>
-                        <input type="text" class="step__form__input placeholder" placeholder="e.g.stephenking@lorem.com" pattern="[a-zA-Zñ\d\.]+@[a-zA-Z]+\.[a-z]+" required>
+                    <fildset class="step__fields__container">
+                        <legend class="step__fields__req label">Email Adress</legend>
+                        <input type="text" class="step__fields__input placeholder" placeholder="e.g.stephenking@lorem.com" pattern="[a-zA-Zñ\d\.]+@[a-zA-Z]+\.[a-z]+" required autocomplete="off">
                     </fildset>
-                    <fildset class="step__form__container">
-                        <legend class="step__form__req label">Phone Number</legend>
-                        <input type="text" class="step__form__input placeholder" placeholder="e.g.+1 234 567 890" pattern="\+\d+ (\d+ ?)+" required>
+                    <fildset class="step__fields__container">
+                        <legend class="step__fields__req label">Phone Number</legend>
+                        <input type="text" class="step__fields__input placeholder" placeholder="e.g.+1 234 567 890" pattern="\+\d+ (\d+ ?)+" required autocomplete="off">
                     </fildset>
-                </form>
+                </div>
             </div>
-        </div>
-        <nav class="sidenav">
-            <div class="stepside">
-                <button class="stepside__num">1</button>
-                <p class="stepside__which">step 1</p>
-                <h3 class="stepside__name">your info</h3>
+        </form>
+        <nav class="sidenav rounded">
+            <div class="sidenav__stepside">
+                <button class="sidenav__stepside__num">1</button>
+                <h4 class="sidenav__stepside__name" title="step 1">your info</h4>
             </div>
-            <div class="stepside">
-                <button class="stepside__num">2</button>
-                <p class="stepside__which">step 2</p>
-                <h3 class="stepside__name">select-plan</h3>
+            <div class="sidenav__stepside">
+                <button class="sidenav__stepside__num">2</button>
+                <h4 class="sidenav__stepside__name" title="step 2">select-plan</h4>
             </div>
-            <div class="stepside">
-                <button class="stepside__num">3</button>
-                <p class="stepside__which">step 3</p>
-                <h3 class="stepside__name">add-ons</h3>
+            <div class="sidenav__stepside">
+                <button class="sidenav__stepside__num">3</button>
+                <h4 class="sidenav__stepside__name" title="step 3">add-ons</h4>
             </div>
-            <div class="stepside">
-                <button class="stepside__num">4</button>
-                <p class="stepside__which">step 4</p>
-                <h3 class="stepside__name">summary</h3>
+            <div class="sidenav__stepside">
+                <button class="sidenav__stepside__num">4</button>
+                <h4 class="sidenav__stepside__name" title="step 4">summary</h4>
             </div>
         </nav>
         <footer class="footer">

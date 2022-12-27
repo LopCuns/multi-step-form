@@ -12,10 +12,11 @@ $neutral-colors:("cool_gray":hsl(231, 11%, 63%),"light_gray": hsl(229, 24%, 87%)
 body
     width: 100vw
     min-height: 100vh
-    margin:0
+    margin:-1px 0 0 0
     padding: 0
+    border-top: 1px solid #000
     background-color: map.get($neutral-colors,"magnolia")
-p,input,a,button,h1,h2,h3
+p,input,a,button,h1,h2,h3,h4,h5,h6
     font-family: 'Ubuntu',sans-serif
 button
     background: none
@@ -52,20 +53,21 @@ input
     @include mx.flex($align: top)
     position: relative
     width: 100%
-    height:100vh
+    height: 100vh
     z-index:0
 .content
     @include mx.flex()
     width: 90%
     margin-top: 6rem
 .step
-
     width:100%
     padding:1rem 2rem 2rem
     background-color: map.get($neutral-colors,'white')
-    &__form
-        @include mx.flex(column,wrap,start,start)
-        gap:1.5rem
+    &__fields
+        @include mx.flex(column,wrap,space-around,start)
+        gap:1rem
+        &__container
+            width:100%
         &__input
             width: 100%
             padding:.5rem
@@ -89,29 +91,31 @@ input
     height: 10rem
     order: -1
     z-index:-1
-    background: url('../multi-step-form-main/assets/images/bg-sidebar-mobile.svg')
-.stepside
-    margin-top: 2rem
-    &__num
-        @include mx.center()
-        width:2.5rem
-        height:2.5rem
-        border: 1px solid map.get($neutral-colors,'light_gray')
-        border-radius: 50%
-        font-weight: bold
-        color: map.get($neutral-colors,'white')
-        transition: background .3s
-        &:hover
-            background-color: map.get($primary-colors,'light_blue')
-            color: #000
-    &__which,&__name
-        display: none
+    background: url('../multi-step-form-main/assets/images/bg-sidebar-mobile.svg') no-repeat 
+    background-size: cover
+    &__stepside
+        margin-top: 2rem
+        &__num
+            @include mx.center()
+            width:2.5rem
+            height:2.5rem
+            border: 1px solid map.get($neutral-colors,'light_gray')
+            border-radius: 50%
+            font-weight: bold
+            color: map.get($neutral-colors,'white')
+            transition: background .3s
+            cursor: pointer
+            &:hover
+                background-color: map.get($primary-colors,'light_blue')
+                color: #000
+        &__name
+            display: none
 
 .footer
     @include mx.flex($justify:space-between)
     width:100%
     padding:2rem
-    margin-top: auto 
+    align-self: flex-end 
     background-color: map.get($neutral-colors,'white')
 
 .next
@@ -120,5 +124,61 @@ input
     background-color: map.get($primary-colors,'marine_blue')
     color: map.get($neutral-colors,'white')
     transition: opacity .3s
+    cursor: pointer
     &:hover
         opacity: .9
+
+
+// DESKTOP DESIGN STYLES
+@media screen and (min-width:900px)
+    .main
+        display: grid
+        grid-template-columns: 1fr 2.5fr
+        grid-template-rows: 4fr 1fr
+        grid-template-areas:"side content" "side foot"
+        width: 90%
+        height: calc(90vh - 6rem)
+        padding: 1rem
+        margin:6rem auto 0
+        background-color: map.get($neutral-colors,"white")
+    .sidenav
+        flex-direction: column
+        align-items: flex-start
+        justify-content: flex-start
+        gap: 1rem
+        padding:2rem
+        position: static
+        height:100%
+        background: url('../multi-step-form-main/assets/images/bg-sidebar-desktop.svg') no-repeat 
+        background-size: cover
+        grid-area: side
+        &__stepside
+            @include mx.flex($justify:flex-start)
+            position: relative
+            gap: 1rem
+            width: 100%
+            margin:0
+            &__name
+                display: inline-block
+                text-transform: uppercase
+                color: map.get($neutral-colors,"white")
+                &::after
+                    content: attr(title)
+                    position: absolute
+                    top: 0
+                    left: 3.5rem
+                    font:
+                        size: .8em
+                        weight: 400
+                    color: map.get($neutral-colors,"light_gray")
+    .content
+        width:80%
+        margin:0 auto
+        grid-area: content
+    .footer
+        grid-area: foot
+
+
+@media screen and (min-width: 1300px)
+    .main
+        grid-template-columns: 1fr 4fr
