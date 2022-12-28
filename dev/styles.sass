@@ -5,6 +5,8 @@
 $primary-colors :("marine_blue":hsl(213, 96%, 18%),"purplish_blue":hsl(243, 100%, 62%),"pastel_blue":hsl(228, 100%, 84%),"light_blue":hsl(206, 94%, 87%),"strawberry_red": hsl(354, 84%, 57%))
 $neutral-colors:("cool_gray":hsl(231, 11%, 63%),"light_gray": hsl(229, 24%, 87%),"magnolia":hsl(217, 100%, 97%),"alabaster":hsl(231, 100%, 99%),"white":hsl(0, 0%, 100%))
 
+// 1.2 OTHERS
+$rounded : 10px
 
 //4.CSS RESET
 *,*::after,*::before
@@ -18,19 +20,39 @@ body
     background-color: map.get($neutral-colors,"magnolia")
 p,input,a,button,h1,h2,h3,h4,h5,h6
     font-family: 'Ubuntu',sans-serif
+h4,h5,h6
+    margin:0
 button
     background: none
     border: none
 input
     border: none
     outline: none
-
+fieldset
+    border: none
+    margin: 0
+    padding:0
+label::selection,label>*::selection
+    display: none
 // 3. UTILITY CLASSES
 .subtitle
     font:
         size: 1em
         weight: 500
     color: map.get($neutral-colors,'cool_gray')
+
+.bold
+    font:
+        family: 'Ubuntu',sans-serif
+        weight:700
+    color: map-get($primary-colors,'marine_blue')
+.light_text
+    font:
+        family:'Ubuntu',sans-serif
+        weight:400
+        size: .9em
+    color: map.get($neutral-colors,'cool_gray') 
+
 .label
     font:
         size: .9
@@ -46,6 +68,10 @@ input
     border-radius: 10px
 .hidden
     visibility: hidden
+.devdisappear
+    display: none
+.noexist
+    display: none
 
 //4. MAIN STYLES
 
@@ -54,6 +80,7 @@ input
     position: relative
     width: 100%
     height: 100vh
+    border-radius: $rounded
     z-index:0
 .content
     @include mx.flex()
@@ -61,28 +88,13 @@ input
     margin-top: 6rem
 .step
     width:100%
-    padding:1rem 2rem 2rem
+    padding:1rem 1.5rem 2rem
+    border-radius: $rounded
     background-color: map.get($neutral-colors,'white')
-    &__fields
-        @include mx.flex(column,wrap,space-around,start)
-        gap:1rem
-        &__container
-            width:100%
-        &__input
-            width: 100%
-            padding:.5rem
-            border: 1px solid map.get($neutral-colors,'light_gray')
-            border-radius: 3px
-            &:focus
-                outline: 1px solid map.get($primary-colors,'marine_blue')
-        &__req
-            margin-bottom:0
-            font:
-                family: 'Ubuntu',sans-serif
-                weight: 500
+
 .invalid_input:invalid
     outline:1px solid map.get($primary-colors,'strawberry_red')
-            
+    
 .sidenav
     @include mx.flex($justify:space-around,$align:top)
     position: absolute
@@ -93,6 +105,7 @@ input
     z-index:-1
     background: url('../multi-step-form-main/assets/images/bg-sidebar-mobile.svg') no-repeat 
     background-size: cover
+
     &__stepside
         margin-top: 2rem
         &__num
@@ -104,7 +117,6 @@ input
             font-weight: bold
             color: map.get($neutral-colors,'white')
             transition: background .3s
-            cursor: pointer
             &:hover
                 background-color: map.get($primary-colors,'light_blue')
                 color: #000
@@ -114,17 +126,16 @@ input
 .footer
     @include mx.flex($justify:space-between)
     width:100%
-    padding:2rem
+    padding:1.5rem
     align-self: flex-end 
     background-color: map.get($neutral-colors,'white')
 
 .next
     padding:.5rem 1rem
-    border-radius: 5px
+    border-radius: calc($rounded / 2)
     background-color: map.get($primary-colors,'marine_blue')
     color: map.get($neutral-colors,'white')
     transition: opacity .3s
-    cursor: pointer
     &:hover
         opacity: .9
 
@@ -136,8 +147,8 @@ input
         grid-template-columns: 1fr 2.5fr
         grid-template-rows: 4fr 1fr
         grid-template-areas:"side content" "side foot"
-        width: 90%
-        height: calc(90vh - 6rem)
+        width: min(90%,80rem)
+        height: 80vh
         padding: 1rem
         margin:6rem auto 0
         background-color: map.get($neutral-colors,"white")
@@ -149,6 +160,7 @@ input
         padding:2rem
         position: static
         height:100%
+        border-radius: 10px
         background: url('../multi-step-form-main/assets/images/bg-sidebar-desktop.svg') no-repeat 
         background-size: cover
         grid-area: side

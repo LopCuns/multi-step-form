@@ -1,0 +1,80 @@
+@use "sass:map"
+@use "mixins" as mx
+//1. VARIABLES
+//1.1 COLORS
+$primary-colors :("marine_blue":hsl(213, 96%, 18%),"purplish_blue":hsl(243, 100%, 62%),"pastel_blue":hsl(228, 100%, 84%),"light_blue":hsl(206, 94%, 87%),"strawberry_red": hsl(354, 84%, 57%))
+$neutral-colors:("cool_gray":hsl(231, 11%, 63%),"light_gray": hsl(229, 24%, 87%),"magnolia":hsl(217, 100%, 97%),"alabaster":hsl(231, 100%, 99%),"white":hsl(0, 0%, 100%))
+
+// 1.2 OTHERS
+$rounded : 10px
+
+//2.- MAIN STYLES
+.step2
+    &__fields
+        &__plan
+            @include mx.flex(column,wrap,start,start)
+            gap: 1rem
+            &__option
+                @include mx.flex(row,wrap,flex-start,flex-start)
+                gap: 1rem
+                width: 100%
+                padding: .9rem .7rem 
+                border: 1px solid map.get($neutral-colors,'light_gray')
+                border-radius: $rounded
+                background-color: map.get($neutral-colors,'white')
+                &:hover
+                    @include mx.selected_plan()
+                &__input
+                    display: none
+                &__info
+                    @include mx.flex(column,wrap,start,start)
+                    gap: .5rem
+                    &__free
+                        font:
+                            family: 'Ubuntu',sans-serif
+                            size:.8em
+                            weight:500
+                        color: map.get($primary-colors,'marine_blue')              
+        &__sub
+            @include mx.flex($justify: space-evenly)
+            width: 100%
+            margin-top: 1.5rem
+            padding: 1rem
+            border-radius: $rounded
+            background-color: map.get($neutral_colors,'magnolia')
+            &__type
+                font:
+                    family: 'Ubuntu',sans-serif
+                    size: .8em
+                    weight: 500
+                color: map.get($neutral-colors,'cool_gray')
+            &__checkbox:checked + &__button::after
+                transform: translateX(1.6rem)
+            &__button
+                @include mx.flex($justify: start)
+                width: 3rem
+                height:1.5rem
+                padding:0 .2rem
+                border-radius: 20px
+                background-color: map.get($primary-colors,'marine_blue')
+                &::after
+                    content:''
+                    display: inline-block 
+                    width:1rem
+                    height:1rem
+                    border-radius: 50%
+                    background-color: map.get($neutral-colors,'white')
+                    transition: transform .3s   
+.plan_selected
+    color: map.get($primary-colors,'marine_blue')        
+
+// DESKTOP DESIGN STYLES
+@media screen and (min-width:900px)
+    .step2__fields__plan
+        flex-direction: row
+        justify-content: center
+        &__option
+            width: calc(100% / 3 - 1rem)
+            flex-direction: column
+            gap: 3rem
+        

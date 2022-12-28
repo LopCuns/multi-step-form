@@ -1,0 +1,28 @@
+@use "sass:map"
+@use "mixins" as mx
+//1. VARIABLES
+//1.1 COLORS
+$primary-colors :("marine_blue":hsl(213, 96%, 18%),"purplish_blue":hsl(243, 100%, 62%),"pastel_blue":hsl(228, 100%, 84%),"light_blue":hsl(206, 94%, 87%),"strawberry_red": hsl(354, 84%, 57%))
+$neutral-colors:("cool_gray":hsl(231, 11%, 63%),"light_gray": hsl(229, 24%, 87%),"magnolia":hsl(217, 100%, 97%),"alabaster":hsl(231, 100%, 99%),"white":hsl(0, 0%, 100%))
+
+// 1.2 OTHERS
+$rounded : 10px
+// 2. MAIN STYLES
+.step1
+    &__fields
+        @include mx.flex(column,wrap,space-around,start)
+        gap:1rem
+        &__container
+            width:100%
+        &__input
+            width: 100%
+            padding: .7rem .5rem
+            border: 1px solid map.get($neutral-colors,'light_gray')
+            border-radius: 5px
+            &:focus
+                outline: 1px solid map.get($primary-colors,'marine_blue')
+        &__req
+            margin-bottom:0
+            font:
+                family: 'Ubuntu',sans-serif
+                weight: 500

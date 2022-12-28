@@ -7,31 +7,74 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="public/styles.css">
+    <link rel="stylesheet" href="public/step1.css">
+    <link rel="stylesheet" href="public/step2.css">
     <title>Multi step form</title>
 </head>
 <body>
     <main class="main">
         <form class="content" id="form">
-            <div class="step rounded">
-                <h2 class="step__title">Personal info</h2>
-                <h3 class="step__subtitle subtitle">Please provide, email address and phone number</h3>
-                <div class="step__fields">
-                    <fildset class="step__fields__container">
-                        <legend class="step__fields__req label">Name</legend>
-                        <input type="text" class="step__fields__input placeholder" placeholder="e.g.Stephen King" pattern="[a-zA-Z]+(( [a-zA-Z]+)+)?" required autocomplete="off">
-                    </fildset>
-                    <fildset class="step__fields__container">
-                        <legend class="step__fields__req label">Email Adress</legend>
-                        <input type="text" class="step__fields__input placeholder" placeholder="e.g.stephenking@lorem.com" pattern="[a-zA-Zñ\d\.]+@[a-zA-Z]+\.[a-z]+" required autocomplete="off">
-                    </fildset>
-                    <fildset class="step__fields__container">
-                        <legend class="step__fields__req label">Phone Number</legend>
-                        <input type="text" class="step__fields__input placeholder" placeholder="e.g.+1 234 567 890" pattern="\+\d+ (\d+ ?)+" required autocomplete="off">
-                    </fildset>
-                </div>
+            <div class="step step1 devdisappear">
+                <h2 class="step1__title">Personal info</h2>
+                <h3 class="step1__subtitle subtitle">Please provide, email address and phone number</h3>
+                <fieldset class="step1__fields">
+                    <div class="step1__fields__container">
+                        <h4 class="step1__fields__req label">Name</h4>
+                        <input type="text" class="step1__fields__input placeholder" placeholder="e.g.Stephen King" pattern="[a-zA-Z]+(( [a-zA-Z]+)+)?" required autocomplete="off">
+                    </div>
+                    <div class="step1__fields__container">
+                        <h4 class="step1__fields__req label">Email Adress</h4>
+                        <input type="text" class="step1__fields__input placeholder" placeholder="e.g.stephenking@lorem.com" pattern="[a-zA-Zñ\d\.]+@[a-zA-Z]+\.[a-z]+" required autocomplete="off">
+                    </div>
+                    <div class="step1__fields__container">
+                        <h4 class="step1__fields__req label">Phone Number</h4>
+                        <input type="text" class="step1__fields__input placeholder" placeholder="e.g.+1 234 567 890" pattern="\+\d+ (\d+ ?)+" required autocomplete="off">
+                    </div>
+                </fieldset>
+            </div>
+            <div class="step step2 ">
+                <h2 class="step2__title">Select your plan</h2>
+                <h3 class="step2__subtitle subtitle">You have the option of monthly or yearly billing.</h3>
+                <fieldset class="step2__fields">
+                        <div class="step2__fields__plan">
+                            <label class="step2__fields__plan__option">
+                                <input type="radio" value="arcade" id="arcade" name="plan" class="step2__fields__plan__option__input">
+                                <img src="multi-step-form-main/assets/images/icon-arcade.svg" alt="arcade machine" class="step2__fields__plan__option__image">
+                                <div class="step2__fields__plan__option__info">
+                                    <span class="step2__fields__plan__option__info__name bold">Arcade</span>
+                                    <span class="step2__fields__plan__option__info__price light_text">$9/mo</span>
+                                    <span class="step2__fields__plan__option__info__free noexist">2 months free</span>
+                                </div>
+                            </label>
+                            <label class="step2__fields__plan__option">
+                                <input type="radio" value="advanced" id="advanced" name="plan" class="step2__fields__plan__option__input">
+                                <img src="multi-step-form-main/assets/images/icon-advanced.svg" alt="remote control" class="step2__fields__plan__option__image">
+                                <div class="step2__fields__plan__option__info">
+                                    <span class="step2__fields__plan__option__info__name bold">Advanced</span>
+                                    <span class="step2__fields__plan__option__info__price light_text">$12/mo</span>
+                                    <span class="step2__fields__plan__option__info__free noexist">2 months free</span>
+                                </div>
+                            </label>
+                            <label class="step2__fields__plan__option">
+                                <input type="radio" value="pro" id="pro" name="plan" class="step2__fields__plan__option__input">
+                                <img src="multi-step-form-main/assets/images/icon-pro.svg" alt="videoconsole control" class="step2__fields__plan__option__image">
+                                <div class="step2__fields__plan__option__info">
+                                    <span class="step2__fields__plan__option__info__name bold">Pro</span>
+                                    <span class="step2__fields__plan__option__info__price light_text">$15/mo</span>
+                                    <span class="step2__fields__plan__option__info__free noexist">2 months free</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="step2__fields__sub">
+                            <span class="step2__fields__sub__type light_bold plan_selected">Monthly</span>
+                            <input type="checkbox" class="step2__fields__sub__checkbox noexist" id="plan">
+                            <label for="plan" class="step2__fields__sub__button"></label>
+                            <span class="step2__fields__sub__type">Yearly</span>
+                        </div>
+                </fieldset>
             </div>
         </form>
-        <nav class="sidenav rounded">
+        <nav class="sidenav">
             <div class="sidenav__stepside">
                 <button class="sidenav__stepside__num">1</button>
                 <h4 class="sidenav__stepside__name" title="step 1">your info</h4>
@@ -50,7 +93,7 @@
             </div>
         </nav>
         <footer class="footer">
-            <button class="back button hidden">Go Back</button>
+            <button class="back button">Go Back</button>
             <button class="next button ">Next Step</button>
         </footer>
     </main>
