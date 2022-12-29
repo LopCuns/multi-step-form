@@ -1,12 +1,6 @@
 @use "sass:map"
 @use "mixins" as mx
-//1. VARIABLES
-//1.1 COLORS
-$primary-colors :("marine_blue":hsl(213, 96%, 18%),"purplish_blue":hsl(243, 100%, 62%),"pastel_blue":hsl(228, 100%, 84%),"light_blue":hsl(206, 94%, 87%),"strawberry_red": hsl(354, 84%, 57%))
-$neutral-colors:("cool_gray":hsl(231, 11%, 63%),"light_gray": hsl(229, 24%, 87%),"magnolia":hsl(217, 100%, 97%),"alabaster":hsl(231, 100%, 99%),"white":hsl(0, 0%, 100%))
-
-// 1.2 OTHERS
-$rounded : 10px
+@use "variables" as *
 
 //4.CSS RESET
 *,*::after,*::before
@@ -22,6 +16,9 @@ p,input,a,button,h1,h2,h3,h4,h5,h6
     font-family: 'Ubuntu',sans-serif
 h4,h5,h6
     margin:0
+p
+    display: inline-block
+    margin: 0
 button
     background: none
     border: none
@@ -122,11 +119,12 @@ label::selection,label>*::selection
                 color: #000
         &__name
             display: none
+            margin-top: 1rem
 
 .footer
     @include mx.flex($justify:space-between)
     width:100%
-    padding:1.5rem
+    padding:1.5rem 3rem
     align-self: flex-end 
     background-color: map.get($neutral-colors,'white')
 
@@ -138,6 +136,8 @@ label::selection,label>*::selection
     transition: opacity .3s
     &:hover
         opacity: .9
+.back
+    color: map.get($neutral-colors,'cool_gray')
 
 
 // DESKTOP DESIGN STYLES
@@ -148,7 +148,7 @@ label::selection,label>*::selection
         grid-template-rows: 4fr 1fr
         grid-template-areas:"side content" "side foot"
         width: min(90%,80rem)
-        height: 80vh
+        height: min(80vh,32rem)
         padding: 1rem
         margin:6rem auto 0
         background-color: map.get($neutral-colors,"white")

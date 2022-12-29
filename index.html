@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="public/styles.css">
     <link rel="stylesheet" href="public/step1.css">
     <link rel="stylesheet" href="public/step2.css">
+    <link rel="stylesheet" href="public/step3.css">
     <title>Multi step form</title>
 </head>
 <body>
@@ -32,7 +33,7 @@
                     </div>
                 </fieldset>
             </div>
-            <div class="step step2 ">
+            <div class="step step2 devdisappear">
                 <h2 class="step2__title">Select your plan</h2>
                 <h3 class="step2__subtitle subtitle">You have the option of monthly or yearly billing.</h3>
                 <fieldset class="step2__fields">
@@ -40,29 +41,29 @@
                             <label class="step2__fields__plan__option">
                                 <input type="radio" value="arcade" id="arcade" name="plan" class="step2__fields__plan__option__input">
                                 <img src="multi-step-form-main/assets/images/icon-arcade.svg" alt="arcade machine" class="step2__fields__plan__option__image">
-                                <div class="step2__fields__plan__option__info">
-                                    <span class="step2__fields__plan__option__info__name bold">Arcade</span>
+                                <span class="step2__fields__plan__option__info">
                                     <span class="step2__fields__plan__option__info__price light_text">$9/mo</span>
+                                    <span class="step2__fields__plan__option__info__name bold">Arcade</span>
                                     <span class="step2__fields__plan__option__info__free noexist">2 months free</span>
-                                </div>
+                                </span>
                             </label>
                             <label class="step2__fields__plan__option">
                                 <input type="radio" value="advanced" id="advanced" name="plan" class="step2__fields__plan__option__input">
                                 <img src="multi-step-form-main/assets/images/icon-advanced.svg" alt="remote control" class="step2__fields__plan__option__image">
-                                <div class="step2__fields__plan__option__info">
+                                <span class="step2__fields__plan__option__info">
                                     <span class="step2__fields__plan__option__info__name bold">Advanced</span>
                                     <span class="step2__fields__plan__option__info__price light_text">$12/mo</span>
                                     <span class="step2__fields__plan__option__info__free noexist">2 months free</span>
-                                </div>
+                                </span>
                             </label>
                             <label class="step2__fields__plan__option">
                                 <input type="radio" value="pro" id="pro" name="plan" class="step2__fields__plan__option__input">
                                 <img src="multi-step-form-main/assets/images/icon-pro.svg" alt="videoconsole control" class="step2__fields__plan__option__image">
-                                <div class="step2__fields__plan__option__info">
+                                <span class="step2__fields__plan__option__info">
                                     <span class="step2__fields__plan__option__info__name bold">Pro</span>
                                     <span class="step2__fields__plan__option__info__price light_text">$15/mo</span>
                                     <span class="step2__fields__plan__option__info__free noexist">2 months free</span>
-                                </div>
+                                </span>
                             </label>
                         </div>
                         <div class="step2__fields__sub">
@@ -71,6 +72,39 @@
                             <label for="plan" class="step2__fields__sub__button"></label>
                             <span class="step2__fields__sub__type">Yearly</span>
                         </div>
+                </fieldset>
+            </div>
+            <div class="step step3">
+                <h2 class="step3__title">Pick add-ons</h2>
+                <h3 class="step3__subtitle subtitle">Add-ons help enhance your gaming experience.</h3>
+                <fieldset class="step3__fields">
+                    <div class="step3__addon">
+                        <input type="checkbox" name="online_service" class="step3__addon__checkbox" id="online_service">
+                        <label for="online_service" class="step3__addon__checkbox__label"></label>
+                        <div class="step3__addon__mainInfo">
+                            <h4 class="step3__addon__name">Online service</h4>
+                            <p class="step3__addon__description light_text">Acces to multiplayer games</p>
+                        </div>
+                        <p class="step3__addon__price">+1$/mo</p>
+                    </div>
+                    <div class="step3__addon">
+                        <input type="checkbox" name="larger_storage" class="step3__addon__checkbox" id="larger_storage">
+                        <label for="larger_storage" class="step3__addon__checkbox__label"></label>
+                        <div class="step3__addon__mainInfo">
+                            <h4 class="step3__addon__name">Larger storage</h4>
+                            <p class="step3__addon__description light_text">Extra 1TB of cloud save</p>
+                        </div>
+                        <p class="step3__addon__price">+2$/mo</p>
+                    </div>
+                    <div class="step3__addon"> 
+                        <input type="checkbox" name="customizable_profile" class="step3__addon__checkbox" id="customizable_profile">
+                        <label for="customizable_profile" class="step3__addon__checkbox__label"></label>
+                        <div class="step3__addon__mainInfo">
+                            <h4 class="step3__addon__name">Customizable profile</h4>
+                            <p class="step3__addon__description light_text">Custom theme on your profile</p>
+                        </div>
+                        <p class="step3__addon__price">+2$/mo</p>
+                    </div>
                 </fieldset>
             </div>
         </form>

@@ -1,0 +1,45 @@
+@use "sass:map"
+@use "mixins" as mx
+@use "variables" as *
+
+.step3
+    &__fields
+        @include mx.flex(column)
+        width: 100%
+        gap: 1rem
+    &__addon
+        @include mx.flex(row,wrap,space-around,center)
+        width: 100%
+        padding:1rem .2rem
+        gap: .4rem
+        border: 1px solid map.get($neutral-colors,'light_gray')
+        border-radius: $rounded
+        background-color: map.get($neutral-colors,'white')
+        &:hover
+            @include mx.selected()
+        &__mainInfo
+            @include mx.flex(column,wrap,flex-start,flex-start)
+            width:70%
+        &__checkbox
+            display: none
+            &:checked + label
+                background-color: map.get($primary-colors,'purplish_blue')
+                background-image: url('../multi-step-form-main/assets/images/icon-checkmark.svg') 
+                background-size: 80%
+                background-position: center
+                background-repeat: no-repeat
+                border: 1px solid map.get($primary-colors,'purplish_blue')
+            &__label
+                width: 1.5rem
+                height: 1.5rem
+                border:1px solid map.get($neutral-colors,'light_gray')
+                border-radius: calc($rounded / 2)
+        &__name
+            display: inline-block
+            font-size: .9em
+        &__description
+            display: inline-block
+            font-size: .8em
+        &__price
+            font-size: .8em
+            color: map.get($primary-colors,'marine_blue')
