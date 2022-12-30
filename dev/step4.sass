@@ -8,6 +8,7 @@
     &__summary
         @include mx.flex(column)
         gap:1rem
+        padding: .7rem .5rem
         background-color: map.get($neutral-colors,'magnolia')
         border-radius: $rounded
         &__plan
@@ -37,7 +38,9 @@
                 color: map.get($neutral-colors,'cool_gray')
             &__price
                 color: map.get($primary-colors,'marine_blue')
-                font-size: .9em
+                font:
+                    size: .8em
+                    weight: 500
     &__total
         @include mx.flex($justify: space-between)
         margin-top: 1rem
