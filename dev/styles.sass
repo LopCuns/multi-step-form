@@ -2,7 +2,7 @@
 @use "mixins" as mx
 @use "variables" as *
 
-//4.CSS RESET
+//CSS RESET
 *,*::after,*::before
     box-sizing: border-box
 body
@@ -31,7 +31,7 @@ fieldset
     padding:0
 label::selection,label>*::selection
     display: none
-// 3. UTILITY CLASSES
+//UTILITY CLASSES
 .subtitle
     font:
         size: 1em
@@ -70,7 +70,7 @@ label::selection,label>*::selection
 .noexist
     display: none
 
-//4. MAIN STYLES
+//MAIN STYLES
 
 .main
     @include mx.flex($align: flex-start)
@@ -89,8 +89,7 @@ label::selection,label>*::selection
     border-radius: $rounded
     background-color: map.get($neutral-colors,'white')
 
-.invalid_input:invalid
-    outline:1px solid map.get($primary-colors,'strawberry_red')
+
     
 .sidenav
     @include mx.flex($justify:space-around,$align:top)
@@ -114,12 +113,12 @@ label::selection,label>*::selection
             font-weight: bold
             color: map.get($neutral-colors,'white')
             transition: background .3s
-            &:hover
-                background-color: map.get($primary-colors,'light_blue')
-                color: #000
         &__name
             display: none
             margin-top: 1rem
+.actualstate
+    background-color: map.get($primary-colors,'light_blue')
+    color: #000
 
 .footer
     @include mx.flex($justify:space-between)
@@ -185,6 +184,7 @@ label::selection,label>*::selection
                     color: map.get($neutral-colors,"light_gray")
     .content
         width:80%
+        height: 100%
         margin:0 auto
         grid-area: content
     .footer

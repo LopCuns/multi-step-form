@@ -1,0 +1,54 @@
+@use "sass:map"
+@use "mixins" as mx
+@use "variables" as *
+
+// MAIN STYLES
+.step4
+    background-color: map.get($neutral-colors,'white')
+    &__summary
+        @include mx.flex(column)
+        gap:1rem
+        background-color: map.get($neutral-colors,'magnolia')
+        border-radius: $rounded
+        &__plan
+            @include mx.flex(column,wrap,flex-start,flex-start)
+            position: relative
+            width: 100%
+            padding: 1rem
+            &::after
+                content:''
+                position: absolute
+                bottom: 0
+                left: 50%
+                transform: translateX(-50%)
+                display: inline-block
+                width: 90%
+                height: 1.5px
+                background-color: map.get($neutral-colors,'cool_gray')
+            &__price
+                align-self: end
+            &__change
+                color: map.get($neutral-colors,'cool_gray')
+        &__addons
+            @include mx.flex($justify: space-between)
+            width:100%
+            padding: .5rem 1rem
+            &__name
+                color: map.get($neutral-colors,'cool_gray')
+            &__price
+                color: map.get($primary-colors,'marine_blue')
+                font-size: .9em
+    &__total
+        @include mx.flex($justify: space-between)
+        margin-top: 1rem
+        padding: 1rem
+        &__title
+            color: map.get($neutral-colors,'cool_gray')
+        &__bill
+            color: map.get($primary-colors,'purplish_blue')
+            font-weight:700
+.submit
+    padding: .7rem 1.4rem
+    border-radius: calc($rounded / 2)
+    background-color: map.get($primary-colors,'purplish_blue')
+    color: map.get($neutral-colors,'white')

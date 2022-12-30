@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="public/step1.css">
     <link rel="stylesheet" href="public/step2.css">
     <link rel="stylesheet" href="public/step3.css">
+    <link rel="stylesheet" href="public/step4.css">
+    <link rel="stylesheet" href="public/step5.css">
     <title>Multi step form</title>
 </head>
 <body>
@@ -74,7 +76,7 @@
                         </div>
                 </fieldset>
             </div>
-            <div class="step step3">
+            <div class="step step3 devdisappear">
                 <h2 class="step3__title">Pick add-ons</h2>
                 <h3 class="step3__subtitle subtitle">Add-ons help enhance your gaming experience.</h3>
                 <fieldset class="step3__fields">
@@ -107,6 +109,40 @@
                     </div>
                 </fieldset>
             </div>
+            <div class="step step4">
+                <h2 class="step4__title">Finishing up</h2>
+                <h3 class="step4__subtitle subtitle">Double-check everything looks OK before confirming.</h3>
+                <div class="step4__summary">
+                    <div class="step4__summary__plan">
+                        <p class="step4__summary__plan__name bold">Arcade (<span data-freq>Monthly</span>)</p>
+                        <p class="step4__summary__plan__price">$9/mo</p>
+                        <a class="step4__summary__plan__change" href="#step2">Change</a>
+                    </div>
+                    <div class="step4__summary__addons">
+                        <p class="step4__summary__addons__name">Online-service</p>
+                        <p class="step4__summary__addons__price">+1$/mo</p>
+                    </div>
+                    <div class="step4__summary__addons">
+                        <p class="step4__summary__addons__name">Larger storage</p>
+                        <p class="step4__summary__addons__price">+2$/mo</p>
+                    </div>
+                </div>
+                <div class="step4__total">
+                    <p class="step4__total__title">Total (per <span data-plan>month</span>)</p>
+                    <p class="step4__total__bill">+$12/mo</p>
+                </div>
+            </div>
+            <div class="step step5 devdisappear">
+                <div class="step5__wrapper">
+                    <img class="step5__img" alt="ok symbol" src="multi-step-form-main/assets/images/icon-thank-you.svg">
+                    <h2 class="step5__title">Thank you!</h2>
+                    <p class="step5__subtitle subtitle"> 
+                    Thanks for confirming your subscription! We hope you have fun 
+                    using our platform. If you ever need support, please feel free 
+                    to email us at support@loremgaming.com.
+                </p>
+                </div>
+            </div>
         </form>
         <nav class="sidenav">
             <div class="sidenav__stepside">
@@ -122,13 +158,14 @@
                 <h4 class="sidenav__stepside__name" title="step 3">add-ons</h4>
             </div>
             <div class="sidenav__stepside">
-                <button class="sidenav__stepside__num">4</button>
+                <button class="sidenav__stepside__num actualstate">4</button>
                 <h4 class="sidenav__stepside__name" title="step 4">summary</h4>
             </div>
         </nav>
         <footer class="footer">
             <button class="back button">Go Back</button>
-            <button class="next button ">Next Step</button>
+            <button class="next button devdisappear">Next Step</button>
+            <button class="submit button">Confirm</button>
         </footer>
     </main>
 </body>
