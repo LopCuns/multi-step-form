@@ -7,10 +7,12 @@
         @include mx.flex(column,wrap,space-around,start)
         gap:1rem
         &__container
+            position: relative
             width:100%
         &__input
             width: 100%
             padding: .7rem .5rem
+            margin-top: .5rem
             border: 1px solid map.get($neutral-colors,'light_gray')
             border-radius: 5px
             &:focus
@@ -20,5 +22,13 @@
             font:
                 family: 'Ubuntu',sans-serif
                 weight: 500
-.invalid_input:invalid
-    outline:1px solid map.get($primary-colors,'strawberry_red')
+    &__errMsg
+        position: absolute
+        top: 0
+        right: 0
+        color: map.get($primary-colors,'strawberry_red')
+        font:
+            family: 'Ubuntu',sans-serif
+            weight: 500
+.invalid_input
+    outline:2px solid map.get($primary-colors,'strawberry_red')
