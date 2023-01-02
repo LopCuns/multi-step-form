@@ -15,11 +15,11 @@ function main(){
         handleInputError(el)
     })
     h.ev(nxtBtn,'click',()=>{
+        if (h.$('main').dataset.actual!=="1") return
         fields.forEach(fl=>handleInputError(fl))
         if(fields.every(fl=>h.isValidImput(fl))){
             h.toggleStep(1,2)
             bkBtn.classList.remove('noactual')
-            console.log(h.$('main').dataset.actual)
         }
         
     })

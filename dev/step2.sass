@@ -42,6 +42,8 @@
                     size: .8em
                     weight: 500
                 color: map.get($neutral-colors,'cool_gray')
+            &__checkbox
+                display: none
             &__checkbox:checked + &__button::after
                 transform: translateX(1.6rem)
             &__button
@@ -59,9 +61,10 @@
                     border-radius: 50%
                     background-color: map.get($neutral-colors,'white')
                     transition: transform .3s   
-.plan_selected
-    color: map.get($primary-colors,'marine_blue')        
-
+.selected_plan
+    @include mx.selected()
+.selected_plan_text
+    color: map.get($primary-colors,'marine_blue')   
 // DESKTOP DESIGN STYLES
 @media screen and (min-width:900px)
     .step2__fields__plan
