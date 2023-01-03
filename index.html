@@ -16,7 +16,7 @@
     <title>Multi step form</title>
 </head>
 <body>
-    <main class="main" id="main" data-actual="1" data-freq="monthly">
+    <main class="main" id="main" data-actual="1" data-freq="Monthly">
         <form class="content" id="form">
             <div class="step step1" id="step1">
                 <h2 class="step1__title">Personal info</h2>
@@ -42,30 +42,30 @@
                 <fieldset class="step2__fields">
                         <div class="step2__fields__plan" id="fields2">
                             <label class="step2__fields__plan__option selected_plan" data-step2Option>
-                                <input type="radio" value="arcade" id="arcade" name="plan" class="step2__fields__plan__option__input">
+                                <input type="radio" value="arcade" id="arcade" name="plan" class="step2__fields__plan__option__input" checked autocomplete="off">
                                 <img src="multi-step-form-main/assets/images/icon-arcade.svg" alt="arcade machine" class="step2__fields__plan__option__image">
                                 <span class="step2__fields__plan__option__info">
                                     <span class="step2__fields__plan__option__info__name bold">Arcade</span>
                                     <span class="step2__fields__plan__option__info__price light_text" data-planPrice="arcade">$9/mo</span>
-                                    <span class="step2__fields__plan__option__info__free noactual">2 months free</span>
+                                    <span class="step2__fields__plan__option__info__free noactual" data-trial>2 months free</span>
                                 </span>
                             </label>
                             <label class="step2__fields__plan__option" data-step2Option>
-                                <input type="radio" value="advanced" id="advanced" name="plan" class="step2__fields__plan__option__input">
+                                <input type="radio" value="advanced" id="advanced" name="plan" class="step2__fields__plan__option__input" autocomplete="off">
                                 <img src="multi-step-form-main/assets/images/icon-advanced.svg" alt="remote control" class="step2__fields__plan__option__image">
                                 <span class="step2__fields__plan__option__info">
                                     <span class="step2__fields__plan__option__info__name bold">Advanced</span>
                                     <span class="step2__fields__plan__option__info__price light_text" data-planPrice="advanced">$12/mo</span>
-                                    <span class="step2__fields__plan__option__info__free noactual">2 months free</span>
+                                    <span class="step2__fields__plan__option__info__free noactual" data-trial>2 months free</span>
                                 </span>
                             </label>
                             <label class="step2__fields__plan__option" data-step2Option>
-                                <input type="radio" value="pro" id="pro" name="plan" class="step2__fields__plan__option__input">
+                                <input type="radio" value="pro" id="pro" name="plan" class="step2__fields__plan__option__input" autocomplete="off">
                                 <img src="multi-step-form-main/assets/images/icon-pro.svg" alt="videoconsole control" class="step2__fields__plan__option__image">
                                 <span class="step2__fields__plan__option__info">
                                     <span class="step2__fields__plan__option__info__name bold">Pro</span>
                                     <span class="step2__fields__plan__option__info__price light_text" data-planPrice="pro">$15/mo</span>
-                                    <span class="step2__fields__plan__option__info__free noactual">2 months free</span>
+                                    <span class="step2__fields__plan__option__info__free noactual" data-trial>2 months free</span>
                                 </span>
                             </label>
                         </div>
@@ -82,31 +82,31 @@
                 <h3 class="step3__subtitle subtitle">Add-ons help enhance your gaming experience.</h3>
                 <fieldset class="step3__fields">
                     <div class="step3__addon">
-                        <input type="checkbox" name="online_service" class="step3__addon__checkbox" id="online_service">
-                        <label for="online_service" class="step3__addon__checkbox__label"></label>
+                        <input type="checkbox" name="online_service" class="step3__addon__checkbox" id="online_service" autocomplete="off">
+                        <label for="online_service" class="step3__addon__checkbox__label" data-addon></label>
                         <div class="step3__addon__mainInfo">
                             <h4 class="step3__addon__name">Online service</h4>
                             <p class="step3__addon__description light_text">Acces to multiplayer games</p>
                         </div>
-                        <p class="step3__addon__price">+1$/mo</p>
+                        <p class="step3__addon__price" data-addonPrice="online_service">+$1/mo</p>
                     </div>
                     <div class="step3__addon">
-                        <input type="checkbox" name="larger_storage" class="step3__addon__checkbox" id="larger_storage">
-                        <label for="larger_storage" class="step3__addon__checkbox__label"></label>
+                        <input type="checkbox" name="larger_storage" class="step3__addon__checkbox" id="larger_storage" autocomplete="off">
+                        <label for="larger_storage" class="step3__addon__checkbox__label" data-addon></label>
                         <div class="step3__addon__mainInfo">
                             <h4 class="step3__addon__name">Larger storage</h4>
                             <p class="step3__addon__description light_text">Extra 1TB of cloud save</p>
                         </div>
-                        <p class="step3__addon__price">+2$/mo</p>
+                        <p class="step3__addon__price" data-addonPrice="larger_storage">+$2/mo</p>
                     </div>
                     <div class="step3__addon"> 
-                        <input type="checkbox" name="customizable_profile" class="step3__addon__checkbox" id="customizable_profile">
-                        <label for="customizable_profile" class="step3__addon__checkbox__label"></label>
+                        <input type="checkbox" name="customizable_profile" class="step3__addon__checkbox" id="customizable_profile" autocomplete="off">
+                        <label for="customizable_profile" class="step3__addon__checkbox__label" data-addon></label>
                         <div class="step3__addon__mainInfo">
                             <h4 class="step3__addon__name">Customizable profile</h4>
                             <p class="step3__addon__description light_text">Custom theme on your profile</p>
                         </div>
-                        <p class="step3__addon__price">+2$/mo</p>
+                        <p class="step3__addon__price" data-addonPrice="customizable_profile">+$2/mo</p>
                     </div>
                 </fieldset>
             </div>
@@ -114,22 +114,15 @@
                 <h2 class="step4__title">Finishing up</h2>
                 <h3 class="step4__subtitle subtitle">Double-check everything looks OK before confirming.</h3>
                 <div class="step4__summary">
-                    <div class="step4__summary__plan">
-                        <p class="step4__summary__plan__name bold">Arcade (<span data-freq>Monthly</span>)</p>
-                        <p class="step4__summary__plan__price">$9/mo</p>
-                        <a class="step4__summary__plan__change" href="#step2">Change</a>
+                    <div class="step4__summary__plan" id="summaryPlan">
+                        <p class="step4__summary__plan__name bold"  data-summaryPlanName>Arcade (Monthly)</p>
+                        <p class="step4__summary__plan__price" data-summaryPlanPrice>$9/mo</p>
+                        <button class="step4__summary__plan__change" data-summaryPlanChange type="button">Change</button>
                     </div>
-                    <div class="step4__summary__addons">
-                        <p class="step4__summary__addons__name">Online-service</p>
-                        <p class="step4__summary__addons__price">+1$/mo</p>
-                    </div>
-                    <div class="step4__summary__addons">
-                        <p class="step4__summary__addons__name">Larger storage</p>
-                        <p class="step4__summary__addons__price">+2$/mo</p>
-                    </div>
+                    <div class="step4__summary__addonsWrapper"></div>
                 </div>
                 <div class="step4__total">
-                    <p class="step4__total__title">Total (per <span data-plan>month</span>)</p>
+                    <p class="step4__total__title">Total (per month)</p>
                     <p class="step4__total__bill">+$12/mo</p>
                 </div>
             </div>
@@ -159,18 +152,27 @@
                 <h4 class="sidenav__stepside__name" title="step 3">add-ons</h4>
             </div>
             <div class="sidenav__stepside">
-                <button class="sidenav__stepside__num" id="stepside4">4</button>
+                <button class="sidenav__stepside__num " id="stepside4">4</button>
                 <h4 class="sidenav__stepside__name" title="step 4">summary</h4>
             </div>
         </nav>
         <footer class="footer">
-            <button class="back button noactual" id="bk_btn">Go Back</button>
+            <button class="back button" id="bk_btn">Go Back</button>
             <button class="next button" id="nxt_btn">Next Step</button>
             <button class="submit button noactual" id="sbm_btn">Confirm</button>
         </footer>
     </main>
+
+    <template id="step4AddonTemplate">
+        <div class="step4__summary__addons">
+            <p class="step4__summary__addons__name"></p>
+            <p class="step4__summary__addons__price"></p>
+        </div>
+    </template>
     <script src="public/main.js" type="module"></script>
     <script src="public/js/step1.js" type="module"></script>
     <script src="public/js/step2.js" type="module"></script>
+    <script src="public/js/step3.js" type="module"></script>
+    <script src="public/js/step4.js" type="module"></script>
 </body>
 </html>

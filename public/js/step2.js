@@ -14,7 +14,8 @@ async function main(){
    const planOptions = h.$('fields2'),
    planBtn = h.$('planBtn'),
    yr = h.attr('data-planType','yr'),
-   mo = h.attr('data-planType','mo')
+   mo = h.attr('data-planType','mo'),
+   trial = document.querySelectorAll('[data-trial]')
 
     const fetching = await fetch('../public/data.json'),
     json = await fetching.json()
@@ -22,15 +23,25 @@ async function main(){
    h.ev(planOptions,'click',(e)=>{
         if(!e.target.hasAttribute('data-step2Option')) return
         changeSelectedPlan(e.target)
+        
    })
    h.ev(planBtn,'change',(e)=>{
         toggleBetween(mo,yr,'selected_plan_text')
-        const pricesData = json.plan.prices[e.target.checked?'yearly':'monthly'],
-        pricesElements = document.querySelectorAll('[data-planPrice]')
+        const planPricesData = json.plan.prices[e.target.checked?'yearly':'monthly'],
+        planPricesElements = document.querySelectorAll('[data-planPrice]'),
+        addonPricesData = json.addons.prices[e.target.checked?'yearly':'monthly'],
+        addonPricesElements = h.getAllQuery(document,'[data-addonPrice]')
 
-        pricesElements.forEach(el=>{
-            el.textContent = pricesData[el.dataset.planprice]
+        planPricesElements.forEach(el=>{
+            el.textContent = planPricesData[el.dataset.planprice]
         })
+
+        addonPricesElements.forEach(el=>{
+            el.textContent = addonPricesData[el.dataset.addonprice]
+        })
+
+        trial.forEach(el=>el.classList.toggle('noactual'))
+        h.$('main').dataset.freq = e.target.checked?'Yearly':'Monthly'
         
    })
 }   

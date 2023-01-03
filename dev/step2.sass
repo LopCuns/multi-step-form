@@ -16,10 +16,12 @@
                 border: 1px solid map.get($neutral-colors,'light_gray')
                 border-radius: $rounded
                 background-color: map.get($neutral-colors,'white')
+                &::selection
+                    display: none
                 &:hover
                     @include mx.selected()
                 &__input
-                    display: none
+                   display: none
                 &__info
                     @include mx.flex(column,wrap,start,start)
                     gap: .5rem
@@ -72,6 +74,7 @@
         justify-content: center
         &__option
             width: calc(100% / 3 - 1rem)
+            min-height:15rem
             flex-direction: column
             gap: 3rem
         
