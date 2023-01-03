@@ -21,8 +21,8 @@ async function main(){
     json = await fetching.json()
 
    h.ev(planOptions,'click',(e)=>{
-        if(!e.target.hasAttribute('data-step2Option')) return
-        changeSelectedPlan(e.target)
+        if(e.target.closest('[data-step2Option]') === null) return
+        changeSelectedPlan(e.target.closest('[data-step2Option]'))
         
    })
    h.ev(planBtn,'change',(e)=>{

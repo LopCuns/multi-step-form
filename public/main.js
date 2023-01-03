@@ -6,6 +6,7 @@ function main(){
     bkBtn = h.$('bk_btn'),
     nxtBtn = h.$('nxt_btn'),
     form = h.$('form'),
+    sbmBtn = h.$('sbm_btn'),
     actualStep = () => Number(mainWrapper.dataset.actual)
     h.ev(bkBtn,'click',()=>{
         h.toggleStep(actualStep(),actualStep() - 1)
@@ -29,9 +30,16 @@ function main(){
                 h.$('sbm_btn').classList.toggle('noactual')
             }
         }
-        steps[Number(mainWrapper.dataset.actual)]?steps[Number(mainWrapper.dataset.actual)]():""  
+        steps[actualStep()]?steps[actualStep()]():""  
     })
 
-    
+    h.ev(sbmBtn,'click',()=>{
+        h.$(`step${actualStep()}`).classList.add('noactual')
+        h.$('step5').classList.remove('noactual')
+        sbmBtn.classList.add('noactual')
+        bkBtn.classList.add('noactual')
+        nxtBtn.classList.add('noactual')
+        console.log(new FormData(form))
+    })
 }
 main()
