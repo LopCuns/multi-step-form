@@ -8,6 +8,9 @@ function main(){
     form = h.$('form'),
     sbmBtn = h.$('sbm_btn'),
     actualStep = () => Number(mainWrapper.dataset.actual)
+
+    form.reset()
+
     h.ev(bkBtn,'click',()=>{
         h.toggleStep(actualStep(),actualStep() - 1)
         if(actualStep()=== 1) bkBtn.classList.add('noactual')
